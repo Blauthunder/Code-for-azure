@@ -1,0 +1,179 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .hero {
+    background: #FBBF24;
+    border-radius: var(--border-radius-lg);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .sun {
+    width: 90px; height: 90px;
+    background: #F59E0B;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px;
+    border: 4px solid #D97706;
+  }
+  .rays {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%; height: 100%;
+    transform: translate(-50%, -50%);
+    animation: spin 12s linear infinite;
+  }
+  @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+  .ray {
+    position: absolute;
+    width: 6px; height: 22px;
+    background: #D97706;
+    border-radius: 3px;
+    left: 50%; top: -18px;
+    transform-origin: 50% 63px;
+  }
+  .hero h1 { font-size: 26px; font-weight: 500; color: #78350F; margin-bottom: 0.5rem; }
+  .hero p { font-size: 16px; color: #92400E; line-height: 1.6; max-width: 500px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+  .card {
+    background: var(--color-background-primary);
+    border-radius: var(--border-radius-lg);
+    border: 0.5px solid var(--color-border-tertiary);
+    padding: 1.25rem;
+  }
+  .card-icon { font-size: 28px; margin-bottom: 10px; color: #D97706; }
+  .card h3 { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+  .card p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+  .badge { display: inline-block; background: #FEF3C7; color: #92400E; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: var(--border-radius-md); margin-bottom: 8px; }
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 1.5rem; }
+  .stat { background: #FEF9C3; border-radius: var(--border-radius-md); padding: 1rem; text-align: center; }
+  .stat .num { font-size: 28px; font-weight: 500; color: #78350F; }
+  .stat .label { font-size: 12px; color: #92400E; margin-top: 2px; }
+  .quote-box {
+    background: #FFFBEB;
+    border-left: 3px solid #FBBF24;
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .quote-box p { font-size: 15px; color: var(--color-text-secondary); font-style: italic; line-height: 1.7; }
+  .quote-box cite { display: block; font-size: 12px; color: #D97706; margin-top: 6px; font-style: normal; font-weight: 500; }
+  .banner {
+    background: #D97706;
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+  }
+  .banner p { font-size: 16px; font-weight: 500; color: #FEF9C3; }
+  .banner span { font-size: 22px; color: #FEF3C7; }
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+  .tag { background: #FEF3C7; color: #92400E; font-size: 13px; padding: 6px 14px; border-radius: 999px; border: 1px solid #FCD34D; }
+  .tag.big { font-size: 15px; padding: 8px 18px; background: #FDE68A; }
+  .tag.xl { font-size: 17px; padding: 10px 22px; background: #FBBF24; color: #78350F; font-weight: 500; }
+</style>
+
+<h2 class="sr-only">Yellow is the best color — a celebration of all things yellow</h2>
+
+<div class="hero">
+  <div class="sun" style="position:relative;">
+    <div class="rays">
+      <div class="ray" style="transform: rotate(0deg) translateX(-50%)"></div>
+      <div class="ray" style="transform: rotate(45deg) translateX(-50%)"></div>
+      <div class="ray" style="transform: rotate(90deg) translateX(-50%)"></div>
+      <div class="ray" style="transform: rotate(135deg) translateX(-50%)"></div>
+      <div class="ray" style="transform: rotate(180deg) translateX(-50%)"></div>
+      <div class="ray" style="transform: rotate(225deg) translateX(-50%)"></div>
+      <div class="ray" style="transform: rotate(270deg) translateX(-50%)"></div>
+      <div class="ray" style="transform: rotate(315deg) translateX(-50%)"></div>
+    </div>
+    <i class="ti ti-sun" aria-hidden="true" style="font-size: 40px; color: #78350F; position:relative; z-index:1;"></i>
+  </div>
+  <h1>Yellow is the greatest color in existence</h1>
+  <p>Bold claim? Absolutely. Wrong? Absolutely not. Science, art, nature, and vibes all agree: yellow wins.</p>
+</div>
+
+<div class="stat-row">
+  <div class="stat">
+    <div class="num">1st</div>
+    <div class="label">color the human eye detects</div>
+  </div>
+  <div class="stat">
+    <div class="num">93%</div>
+    <div class="label">of sunlight is yellow-ish</div>
+  </div>
+  <div class="stat">
+    <div class="num">∞</div>
+    <div class="label">bananas consumed per year</div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="badge">Science</div>
+    <div class="card-icon"><i class="ti ti-eye" aria-hidden="true"></i></div>
+    <h3>Most visible color</h3>
+    <p>The human eye contains more green and yellow receptors than any other. Yellow literally registers faster in the brain — it's neurologically superior.</p>
+  </div>
+  <div class="card">
+    <div class="badge">Psychology</div>
+    <div class="card-icon"><i class="ti ti-mood-happy" aria-hidden="true"></i></div>
+    <h3>Instant happiness</h3>
+    <p>Studies show yellow triggers the release of serotonin. It's impossible to be truly sad in a bright yellow room. Impossible. Don't test it.</p>
+  </div>
+  <div class="card">
+    <div class="badge">Nature</div>
+    <div class="card-icon"><i class="ti ti-leaf" aria-hidden="true"></i></div>
+    <h3>Chosen by the sun</h3>
+    <p>The star keeping all life alive radiates yellow light. If the sun picked yellow, maybe take the hint. The sun has been doing this for 4.6 billion years.</p>
+  </div>
+  <div class="card">
+    <div class="badge">Safety</div>
+    <div class="card-icon"><i class="ti ti-alert-triangle" aria-hidden="true"></i></div>
+    <h3>Literally saves lives</h3>
+    <p>Warning signs, school buses, life vests, and taxis are yellow. It's the universal language for "hey, pay attention." Life-saving by design.</p>
+  </div>
+  <div class="card">
+    <div class="badge">Culture</div>
+    <div class="card-icon"><i class="ti ti-star" aria-hidden="true"></i></div>
+    <h3>Gold = yellow</h3>
+    <p>Gold medals, trophies, stars, and crowns — all yellow. Winning has always been yellow. Every other color is just competing for second place.</p>
+  </div>
+  <div class="card">
+    <div class="badge">Food</div>
+    <div class="card-icon"><i class="ti ti-apple" aria-hidden="true"></i></div>
+    <h3>Best foods are yellow</h3>
+    <p>Bananas. Corn. Cheese. Lemons. Pineapple. Butter. Eggs. Mango. Yellow food is just hitting different. Nature color-coded the good stuff.</p>
+  </div>
+</div>
+
+<div class="quote-box">
+  <p>"Yellow is not simply a color. It is an attitude, a philosophy, a way of life. To see the world in yellow is to see it as it truly is — full of light, energy, and potential."</p>
+  <cite>— Someone very wise, probably</cite>
+</div>
+
+<div class="tag-cloud">
+  <span class="tag">sunflowers</span>
+  <span class="tag xl">sunshine</span>
+  <span class="tag">gold medals</span>
+  <span class="tag big">bananas</span>
+  <span class="tag">taxi cabs</span>
+  <span class="tag xl">happiness</span>
+  <span class="tag big">lightning</span>
+  <span class="tag">stars</span>
+  <span class="tag big">lemon pie</span>
+  <span class="tag">spongebob</span>
+  <span class="tag xl">the sun</span>
+  <span class="tag">butter</span>
+  <span class="tag big">bumblebees</span>
+  <span class="tag">daffodils</span>
+</div>
+
+<div class="banner">
+  <span><i class="ti ti-crown" aria-hidden="true"></i></span>
+  <p>Yellow — the color of the sun, of gold, of joy, of life itself.<br>No other color comes close. Case closed.</p>
+</div>
